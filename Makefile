@@ -17,6 +17,12 @@ distclean:
 #deb-clean:
 #	debuild clean
 
+test-package-npm:
+	rm -f ./*tgz
+	npm pack
+	tar -ztvf *tgz
+	rm -f ./*tgz
+
 indent:
 	astyle --style=java --indent-namespaces --indent-switches --pad-header --lineend=linux --suffix=none --recursive include/\*.hpp examples/\*.cpp test/\*.cpp
 #	astyle --style=java --indent-namespaces --indent-switches --pad-header --unpad-paren --align-pointer=type --lineend=linux --suffix=none --recursive include/\*.hpp examples/\*.cpp test/\*.cpp
